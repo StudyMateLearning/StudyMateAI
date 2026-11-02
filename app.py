@@ -82,7 +82,7 @@ if st.button("Ask StudyMate AI"):
             Do not assume the student already understands
             advanced concepts. Explain step by step.
             """
-            """
+            
 
             with st.spinner("StudyMate AI is thinking..."):
                 for attempt in range(3):
