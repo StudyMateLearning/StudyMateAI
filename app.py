@@ -31,6 +31,10 @@ language = st.selectbox(
     ["Simple English", "Urdu"]
 )
 
+student_class = st.selectbox(
+    "Choose your class",
+    ["9th Class", "10th Class", "11th Class", "12th Class"]
+)
 task = st.selectbox(
     "What do you need help with?",
     ["Explain a topic", "Solve a question", "Generate a quiz"]
@@ -56,6 +60,7 @@ if st.button("Ask StudyMate AI"):
             for Pakistani students.
 
             Subject: {subject}
+            Class: {student_class}
             Language: {language}
             Task: {task}
             Student question: {question}
@@ -63,9 +68,20 @@ if st.button("Ask StudyMate AI"):
             Explain everything clearly using simple words.
             Give practical examples.
             Show mathematics step by step.
-            If generating a quiz, provide five questions
+                       If generating a quiz, provide five questions
             and an answer key separately.
             Encourage the student to understand.
+
+            Match the difficulty and depth of your explanation
+            to the selected class and its school level.
+
+            For Pakistani students, use familiar examples.
+            For Urdu, explain naturally in Urdu script.
+            Keep technical terms in English when helpful.
+
+            Do not assume the student already understands
+            advanced concepts. Explain step by step.
+            """
             """
 
             with st.spinner("StudyMate AI is thinking..."):
