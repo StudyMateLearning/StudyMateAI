@@ -1,6 +1,7 @@
 
 import streamlit as st
 from google import genai
+import time
 
 st.set_page_config(
     page_title="StudyMate AI",
@@ -14,8 +15,15 @@ st.write("Learn difficult topics in simple English or Urdu.")
 
 subject = st.selectbox(
     "Choose your subject",
-    ["Mathematics", "Computer Science", "English",
-     "Physics", "Chemistry", "Biology", "Other"]
+    [
+        "Mathematics",
+        "Computer Science",
+        "English",
+        "Physics",
+        "Chemistry",
+        "Biology",
+        "Other"
+    ]
 )
 
 language = st.selectbox(
@@ -61,10 +69,19 @@ if st.button("Ask StudyMate AI"):
             """
 
             with st.spinner("StudyMate AI is thinking..."):
-                response = client.models.generate_content(
-                    model="gemini-3.8-flash",
-                    contents=prompt
-                )
+                for attempt in range(3):
+                    try:
+                        response = client.models.generate_content(
+                            model="gemini-3.8-flash",
+                            contents=prompt
+                        )
+                        break
+
+                    except Exception as error:
+                        if attempt == 2:
+                            raise error
+
+                        time.sleep(5 * (attempt + 1))
 
             st.markdown("### Your Answer")
             st.write(response.text)
