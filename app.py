@@ -120,6 +120,18 @@ Show mathematics step by step.
 
             if response is not None:
                 st.markdown("### Your Answer")
-                st.markdown(response.text)
+                import re
+
+answer = response.text
+
+parts = re.split(r"```(\w*)\n(.*?)```", answer, flags=re.DOTALL)
+
+for i in range(0, len(parts), 3):
+    st.markdown(parts[i])
+
+    if i + 2 < len(parts):
+        language = parts[i + 1] or "python"
+        code = parts[i + 2].strip()
+        st.code(code, language=language)
         except Exception as error:
             st.error(f"Something went wrong: {error}")
