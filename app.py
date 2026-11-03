@@ -76,7 +76,11 @@ IMPORTANT FORMATTING RULES:
 - Make sure every code example is valid and executable.
 - Never include plain English statements as Python code.
 - Explain code line by line after each code block.
-
+- Never use single backticks for complete code examples.
+- Always place complete code examples between triple backticks.
+- Start Python code blocks with ```python on a new line.
+- End every code block with ``` on a separate new line.
+- Never compress multiple Python statements onto one line.
 Show mathematics step by step.
 
             If generating a quiz, provide five questions
