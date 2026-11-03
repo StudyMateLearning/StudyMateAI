@@ -84,8 +84,10 @@ if st.button("Ask StudyMate AI"):
             """
             
 
+                        response = None
+
             with st.spinner("StudyMate AI is thinking..."):
-                for attempt in range(3):
+                for attempt in range(4):
                     try:
                         response = client.models.generate_content(
                             model="gemini-3.8-flash",
@@ -94,13 +96,20 @@ if st.button("Ask StudyMate AI"):
                         break
 
                     except Exception as error:
-                        if attempt == 2:
+                        if "503" in str(error) or "UNAVAILABLE" in str(error):
+                            if attempt == 3:
+                                st.warning(
+                                    "StudyMate AI is temporarily busy. "
+                                    "Please try again in a few minutes."
+                                )
+                            else:
+                                time.sleep(10 * (attempt + 1))
+                        else:
                             raise error
 
-                        time.sleep(5 * (attempt + 1))
-
-            st.markdown("### Your Answer")
-            st.write(response.text)
+            if response is not None:
+                st.markdown("### Your Answer")
+                st.write(response.text)
 
         except Exception as error:
             st.error(f"Something went wrong: {error}")
