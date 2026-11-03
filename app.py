@@ -109,7 +109,6 @@ if st.button("Ask StudyMate AI"):
 
             if response is not None:
                 st.markdown("### Your Answer")
-                st.write(response.text)
-
+                st.markdown(response.text)
         except Exception as error:
             st.error(f"Something went wrong: {error}")
