@@ -48,7 +48,6 @@ question = st.text_area(
 if st.button("Ask StudyMate AI"):
     if not question.strip():
         st.warning("Please enter a question first.")
-
     else:
         try:
             client = genai.Client(
@@ -68,8 +67,10 @@ if st.button("Ask StudyMate AI"):
             Explain everything clearly using simple words.
             Give practical examples.
             Show mathematics step by step.
-                       If generating a quiz, provide five questions
+
+            If generating a quiz, provide five questions
             and an answer key separately.
+
             Encourage the student to understand.
 
             Match the difficulty and depth of your explanation
@@ -82,9 +83,8 @@ if st.button("Ask StudyMate AI"):
             Do not assume the student already understands
             advanced concepts. Explain step by step.
             """
-            
 
-                        response = None
+            response = None
 
             with st.spinner("StudyMate AI is thinking..."):
                 for attempt in range(4):
