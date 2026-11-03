@@ -68,6 +68,15 @@ if st.button("Ask StudyMate AI"):
 Give practical examples.
 
 IMPORTANT FORMATTING RULES:
+MATHEMATICS FORMATTING RULES:
+- Write mathematical equations using LaTeX notation.
+- Use $ ... $ for short mathematical expressions.
+- Use $$ ... $$ for important equations on separate lines.
+- Solve mathematical problems one step at a time.
+- Explain every operation in simple words.
+- Clearly highlight the final answer.
+- Never repeat or duplicate mathematical symbols.
+- Check all calculations before presenting the answer.
 - Put every Python code example in a separate fenced code block.
 - Use triple backticks with python after the opening backticks.
 - Preserve correct Python indentation.
@@ -81,7 +90,11 @@ IMPORTANT FORMATTING RULES:
 - Start Python code blocks with ```python on a new line.
 - End every code block with ``` on a separate new line.
 - Never compress multiple Python statements onto one line.
-Show mathematics step by step.
+
+
+
+Show mathematics step by step. 
+
 
             If generating a quiz, provide five questions
             and an answer key separately.
