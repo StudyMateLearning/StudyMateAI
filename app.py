@@ -2,7 +2,7 @@
 import streamlit as st
 from google import genai
 import time
-
+import re
 st.set_page_config(
     page_title="StudyMate AI",
     page_icon="📚"
@@ -95,6 +95,7 @@ Show mathematics step by step.
             advanced concepts. Explain step by step.
             """
 
+            
             response = None
 
             with st.spinner("StudyMate AI is thinking..."):
@@ -119,19 +120,20 @@ Show mathematics step by step.
                             raise error
 
             if response is not None:
-                st.markdown("### Your Answer")
-                import re
+                answer = response.text
 
-answer = response.text
+                parts = re.split(
+                    r"```(\w*)\n(.*?)```",
+                    answer,
+                    flags=re.DOTALL
+                )
 
-parts = re.split(r"```(\w*)\n(.*?)```", answer, flags=re.DOTALL)
+                for i in range(0, len(parts), 3):
+                    st.markdown(parts[i])
 
-for i in range(0, len(parts), 3):
-    st.markdown(parts[i])
-
-    if i + 2 < len(parts):
-        language = parts[i + 1] or "python"
-        code = parts[i + 2].strip()
-        st.code(code, language=language)
+                    if i + 2 < len(parts):
+                        code_language = parts[i + 1] or "python"
+                        code = parts[i + 2].strip()
+                        st.code(code, language=code_language)    
         except Exception as error:
             st.error(f"Something went wrong: {error}")
