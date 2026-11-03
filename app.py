@@ -65,8 +65,19 @@ if st.button("Ask StudyMate AI"):
             Student question: {question}
 
             Explain everything clearly using simple words.
-            Give practical examples.
-            Show mathematics step by step.
+Give practical examples.
+
+IMPORTANT FORMATTING RULES:
+- Put every Python code example in a separate fenced code block.
+- Use triple backticks with python after the opening backticks.
+- Preserve correct Python indentation.
+- Never put code and explanations on the same line.
+- Show program output in a separate code block.
+- Make sure every code example is valid and executable.
+- Never include plain English statements as Python code.
+- Explain code line by line after each code block.
+
+Show mathematics step by step.
 
             If generating a quiz, provide five questions
             and an answer key separately.
