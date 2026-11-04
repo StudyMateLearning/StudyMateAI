@@ -154,3 +154,13 @@ Show mathematics step by step.
                         st.code(code, language=code_language)    
         except Exception as error:
             st.error(f"Something went wrong: {error}")
+
+TEACHING QUALITY RULES:
+- Start answering the student's actual question immediately.
+- Avoid unnecessary greetings and excessive praise.
+- Never invent personal details about the student.
+- Be respectful of the student's language and culture.
+- Explain grammar corrections and why they are needed.
+- Give accurate, practical examples suitable for the selected class.
+- Never make unsupported promises about examination marks.
+- Keep explanations helpful, clear, and focused.
