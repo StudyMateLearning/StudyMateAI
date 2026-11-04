@@ -72,6 +72,9 @@ MATHEMATICS FORMATTING RULES:
 - Write mathematical equations using LaTeX notation.
 - Use $ ... $ for short mathematical expressions.
 - Use $$ ... $$ for important equations on separate lines.
+- Never write fractions as compressed text such as 2x2=102.
+- Use properly formatted LaTeX fractions for division steps.
+- Keep every mathematical operation clear and readable.
 - Solve mathematical problems one step at a time.
 - Explain every operation in simple words.
 - Clearly highlight the final answer.
@@ -82,6 +85,8 @@ MATHEMATICS FORMATTING RULES:
 - Preserve correct Python indentation.
 - Never put code and explanations on the same line.
 - Show program output in a separate code block.
+- Never write multiple Python statements on the same line.
+- In Urdu answers, keep Python code in separate, properly formatted code blocks exactly as in English answers.
 - Make sure every code example is valid and executable.
 - Never include plain English statements as Python code.
 - Explain code line by line after each code block.
