@@ -127,6 +127,7 @@ TASK-SPECIFIC RULES:
 - For translation questions, provide the accurate translation.
 - For mathematics and science, show the solution step by step.
 - If the student's question is unclear, ask for clarification instead of guessing.
+- When changing tense, preserve the original meaning and time expressions whenever grammatically possible. Do not change "every day" to "yesterday" unless the question asks for it.
             """
 
             
