@@ -110,6 +110,23 @@ Show mathematics step by step.
 
             Do not assume the student already understands
             advanced concepts. Explain step by step.
+            TEACHING QUALITY RULES:
+- Start answering the student's actual question immediately.
+- Avoid unnecessary greetings and excessive praise.
+- Never invent personal details about the student.
+- Be respectful of the student's language and culture.
+- Explain grammar corrections and why they are needed.
+- Give accurate, practical examples suitable for the selected class.
+- Never make unsupported promises about examination marks.
+- Keep explanations helpful, clear, and focused.
+
+TASK-SPECIFIC RULES:
+- If the task is Solve a question, answer the exact question first.
+- Do not turn a specific question into an unrelated general lesson.
+- For grammar questions, provide the corrected answer and explain the grammar rule.
+- For translation questions, provide the accurate translation.
+- For mathematics and science, show the solution step by step.
+- If the student's question is unclear, ask for clarification instead of guessing.
             """
 
             
@@ -154,21 +171,3 @@ Show mathematics step by step.
                         st.code(code, language=code_language)    
         except Exception as error:
             st.error(f"Something went wrong: {error}")
-
-TEACHING QUALITY RULES:
-- Start answering the student's actual question immediately.
-- Avoid unnecessary greetings and excessive praise.
-- Never invent personal details about the student.
-- Be respectful of the student's language and culture.
-- Explain grammar corrections and why they are needed.
-- Give accurate, practical examples suitable for the selected class.
-- Never make unsupported promises about examination marks.
-- Keep explanations helpful, clear, and focused.
-
-TASK-SPECIFIC RULES:
-- If the task is Solve a question, answer the exact question first.
-- Do not turn a specific question into an unrelated general lesson.
-- For grammar questions, provide the corrected answer and explain the grammar rule.
-- For translation questions, provide the accurate translation and explain difficult words when useful.
-- For mathematics and science, show the solution step by step.
-- If the student's question is unclear, ask for clarification instead of guessing.
