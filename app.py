@@ -158,7 +158,6 @@ TASK-SPECIFIC RULES:
                                 time.sleep(10 * (attempt + 1))
                         else:
                             raise error
-
             if response is not None:
                 answer = response.text
 
@@ -169,11 +168,20 @@ TASK-SPECIFIC RULES:
                 )
 
                 for i in range(0, len(parts), 3):
-                    st.markdown(parts[i])
+                    text_part = parts[i].strip()
+
+                    if text_part:
+                        st.markdown(text_part)
 
                     if i + 2 < len(parts):
                         code_language = parts[i + 1] or "python"
                         code = parts[i + 2].strip()
-                        st.code(code, language=code_language)    
+
+                        if code:
+                            st.code(code, language=code_language)
+
         except Exception as error:
             st.error(f"Something went wrong: {error}")
+           
+
+        
